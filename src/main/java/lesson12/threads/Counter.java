@@ -2,19 +2,24 @@ package lesson12.threads;
 
 public class Counter {
 	
-	private static int c = 0;
+	private int c = 0;
 	
-	public synchronized static void inc() {
-		c++;
-		System.out.println("inc c=" + getC());
+	public void inc() {
+		synchronized(this) {
+			c++;
+			System.out.println("inc c=" + c);			
+		}
+
 	}
 	
-	public synchronized static void dec() {
-		c--;
-		System.out.println("dec c=" + getC());
+	public void dec() {
+		synchronized(this) {
+			c--;
+			System.out.println("dec c=" + c);			
+		}
 	}
 	
-	public synchronized static int getC() {
+	private synchronized int getC() {
 		return c;
 	}
 

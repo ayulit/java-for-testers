@@ -4,8 +4,10 @@ public class ConcurrencyRunner {
 
 	public static void main(String[] args) {
 
-		Thread greyCat = new Thread(new GreyCat()); 
-		Thread redCat = new Thread(new RedCat());
+		Counter cup = new Counter();
+		
+		Thread greyCat = new Thread(new GreyCat(cup)); 
+		Thread redCat = new Thread(new RedCat(cup));
 		
 		greyCat.start();
 		redCat.start();
