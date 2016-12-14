@@ -4,17 +4,17 @@ public class Counter {
 	
 	private static int c = 0;
 	
-	public static void inc() {
+	public synchronized static void inc() {
 		c++;
 		System.out.println("inc c=" + getC());
 	}
 	
-	public static void dec() {
+	public synchronized static void dec() {
 		c--;
 		System.out.println("dec c=" + getC());
 	}
 	
-	public static int getC() {
+	public synchronized static int getC() {
 		return c;
 	}
 
